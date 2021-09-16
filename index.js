@@ -10,15 +10,20 @@ document.addEventListener('DOMContentLoaded', () => {
     let rightButton = document.querySelector('.right-arrow');
     let leftButton = document.querySelector('.left-arrow');
     rightButton.addEventListener('click', e => {
-        currentNavItemIdx++;
-        console.log('clicked!', currentNavItemIdx)
-        header.innerText = `tiny ${navItems[currentNavItemIdx].innerText}`
+        if(currentNavItemIdx !== navItems.length - 1){
+            currentNavItemIdx++;
+            header.innerText = `tiny ${navItems[currentNavItemIdx].innerText}`
+        }
+
         
     })
 
     leftButton.addEventListener('click', e => {
-        currentNavItemIdx--;
-        console.log('clicked!', currentNavItemIdx)
+        if(currentNavItemIdx !== 0){
+            currentNavItemIdx--;
+            header.innerText = `tiny ${navItems[currentNavItemIdx].innerText}`
+        }
+
     })
 })
 
